@@ -1,9 +1,7 @@
 from pymongo import MongoClient
+import os
 
-client = MongoClient(
-    "mongodb+srv://karthikeya_user:Jk0j0BNBMFI4Wk7Z@karthikeya-cluster.mhzauh6.mongodb.net/?appName=karthikeya-cluster"
-)
-
+client = MongoClient(os.getenv("MONGO_URI"))
 db = client["auth_db"]
 users_collection = db["users"]
 
